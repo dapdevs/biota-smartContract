@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>Register information at Blockchain</title>
+
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="./index.js"></script>
+  </head>
+
+  <body class="container">
+
+    <h1 class="page-header">Biota - Conservation Reimagined</h1>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">Add Stakeholder</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newStakeholder">Address:</label> </td>
+                <td>
+                  <input class="form-control" id="newStakeholder">
+                </td>
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="addStakeholder()" class="btn btn-primary">Add</a>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Ban Stakeholder</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="banStakeholder">Address:</label> </td>
+                  <td>
+                    <input class="form-control" id="banStakeholder">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="banStakeholder()" class="btn btn-primary">Ban</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Buy Shares</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="buyShares">Shares to buy:</label> </td>
+                  <td>
+                    <input class="form-control" id="buyShares">
+                  </td>
+                </tr>
+                <tr>
+                    <td><label for="buyShares">From:</label> </td>
+                    <td>
+                      <input class="form-control" id="buyShares">
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <a href="#" onclick="buyShares()" class="btn btn-primary">Buy</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Can Pay Rent</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="canPayRent">Address:</label> </td>
+                  <td>
+                    <input class="form-control" id="banStakeholder">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="canPayRent()" class="btn btn-primary">Run</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">Claim Ownership</h3>
+        <form class="form-inline" role="form">
+          <a href="#" onclick="claimOwnership()" class="btn btn-primary">Claim</a>
+          <div class="form-group">
+            <table>
+              <tr>
+                <td>
+                  <label id="lastInfo">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Distribute</h3>
+          <form class="form-inline" role="form">
+            <a href="#" onclick="distribute()" class="btn btn-primary">Distribute</a>
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td>
+                    <label id="lastInfo">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Limit bid time</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="banStakeholder">Months:</label> </td>
+                  <td>
+                    <input class="form-control" id="limitadvancedrent">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="limitadvancedrent()" class="btn btn-primary">Set</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">OfferShares</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="offerShares">Shares offered:</label> </td>
+                  <td>
+                    <input class="form-control" id="offerShares">
+                  </td>
+                </tr>
+                <tr>
+                    <td><label for="offerShares">Sell price:</label> </td>
+                    <td>
+                      <input class="form-control" id="offerShares">
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <a href="#" onclick="offerShares()" class="btn btn-primary">Offer Shares</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Set Tax</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="setTax">Tax (0-100):</label> </td>
+                  <td>
+                    <input class="form-control" id="setTax">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="setTax()" class="btn btn-primary">Set</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Withdraw</h3>
+          <form class="form-inline" role="form">
+            <a href="#" onclick="withdraw()" class="btn btn-primary">Withdraw</a>
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td>
+                    <label id="lastInfo">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">Is Stakeholder</h3>
+          <form class="form-inline" role="form">
+            <a href="#" onclick="isStakeholder()" class="btn btn-primary">Is Stakeholder</a>
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td>
+                    <label id="lastInfo">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">Transfer</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="transfer">Address:</label> </td>
+                <td>
+                  <input class="form-control" id="transfer">
+                </td>
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="transfer()" class="btn btn-primary">Transfer</a>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">Shares Offered</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="sharesOffered">Address:</label> </td>
+                <td>
+                  <input class="form-control" id="sharesOffered">
+                </td>
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="sharesOffered()" class="btn btn-primary">View</a>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Show Shares of</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="showSharesOf">Address:</label> </td>
+                  <td>
+                    <input class="form-control" id="showSharesOf">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="showSharesOf()" class="btn btn-primary">Show</a>
+          </form>
+        </div>
+      </div>
+
+  </body>
+</html>
+
